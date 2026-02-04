@@ -1,16 +1,17 @@
 syntax = "proto3";
 
 package meshScale;
+import "nanopb.proto";
 
 message SendTextM
 {
-  string send_string    = 1;
-  sint32 destination_nr = 2;
+  string send_string    = 1 [(nanopb).max_size = 64];
+  uint32 destination_nr = 2;
 }
 
 message SendAnnounceM
 {
-  sint32 destination_nr = 1;
+  uint32 destination_nr = 1;
 }
 
 message CommandFromClientM {
