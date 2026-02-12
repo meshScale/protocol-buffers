@@ -1,0 +1,5 @@
+
+meshScale.UserChat.destination_hash max_size:16 fixed_length:true
+meshScale.UserChat.text_string max_size:40;
+
+

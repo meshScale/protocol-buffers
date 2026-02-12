@@ -1,0 +1,11 @@
+
+
+syntax = "proto3";
+package meshScale;
+
+// User sends/receives a text message in a chat
+message UserChat {
+  bytes destination_hash = 1;
+  string text_string     = 2;
+}
+

@@ -1,0 +1,6 @@
+
+
+meshScale.Announce.destination_hash max_size:16 fixed_length:true
+meshScale.Announce.destination_name max_length:8;
+
+

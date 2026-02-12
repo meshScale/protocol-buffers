@@ -1,0 +1,36 @@
+
+
+syntax = "proto3";
+package meshScale;
+
+import "UserChat.proto";
+import "Announce.proto";
+
+
+
+// Main protobuff message that can contain all other messages
+// field tags above 100 for internal/client communication
+message PbMessage {
+    
+    oneof content {
+      Announce announce = 3;
+      UserChat userchat = 4;
+  };
+
+    //for internal/client use
+    optional Source local_source = 100;
+    optional uint64 timestamp_ms = 101; //timestamp in ms since epoch
+}
+
+
+enum Source {
+    NONE = 0;
+    NETWORK = 1;
+    CLIENT = 2;
+
+    MANAGER_CLIENT = 10;
+    MANAGER_HARDWARE = 11;
+    MANAGER_NETWORK = 12;
+    MANAGER_SYSTEM = 13;
+    MANAGER_UI = 14;
+}

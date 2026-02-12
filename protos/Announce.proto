@@ -1,0 +1,11 @@
+
+
+syntax = "proto3";
+package meshScale;
+
+// User sends/receives a text message in a chat
+message Announce {
+  bytes destination_hash = 1;
+  optional string destination_name = 2; //friendly name
+}
+
